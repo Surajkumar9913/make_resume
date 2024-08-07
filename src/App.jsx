@@ -22,7 +22,7 @@ function App() {
       <div className='text-center w-full bg-customColor pt-4'>
         <h1 className='text-3xl text-gray-800'>Resume Builder Dashboard</h1>
       </div>
-      <div className="w-full px-10   bg-customColor flex justify-end ">
+      <div className="w-full px-10   bg-customColor text-center md:flex md:justify-end ">
         <button
           className="bg-purple-600 my-4 text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-700"
           onClick={handlePrint}
