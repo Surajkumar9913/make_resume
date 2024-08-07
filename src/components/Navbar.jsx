@@ -1,17 +1,22 @@
 import React from 'react'
-// import { a } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <div
-            className=' flex justify-around items-center font-medium text-xl py-3  text-gray-800 bg-green-400 shadow-[0_4px_8px_rgba(0,255,0,0.2)]'
+            className=' flex justify-around items-center font-medium text-xl py-3  text-gray-800 bg-Navcolor '
         >
             <div>
-                <a href="/" ><i className="fa-regular fa-file-word mr-1 "></i>MakeResume</a >
+                <a href="/" className='text-purple-600 text-2xl font-pacifico' ><i className="fa-regular fa-file-word mr-1 "></i>MakeResume</a >
             </div>
-            <ul className='flex gap-5 text-slate-600'>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+            <ul className='md:flex items-center gap-5 text-gray-700 hidden '>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Template</a></li>
+                <li><a href="#">About</a></li>
+                <a href="#"
+                    className="bg-purple-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-700"
+                >
+                    Contact
+                </a>
             </ul>
         </div>
     )

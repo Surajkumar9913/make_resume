@@ -50,6 +50,9 @@ const MyResumeProvider = ({ children }) => {
     },
   ]);
 
+  const [certificates, setCertificates] = useState([]);
+  const [strengths, setStrengths] = useState([]);
+
   const handleData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   }
@@ -99,9 +102,32 @@ const MyResumeProvider = ({ children }) => {
     const newProjectList = projects.filter((project) => project.id !== id)
     setProjects(newProjectList);
   }
-  const handleSkills = () => {
+  const addSkill = (categoryId, skillName, skillValue) => {
 
-  }
+    const updatedSkills = skills.map(skill => {
+      if (skill.id === categoryId) {
+        return {
+          ...skill,
+          [skillName]: [...skill[skillName], skillValue]
+        };
+      }
+      return skill;
+    });
+    setSkills(updatedSkills);
+  };
+
+  const handleAddCertificates = (title) => {
+    if (title) {
+      setCertificates(prevCertificates => [...prevCertificates, title]);
+    }
+  };
+  const handleAddStrengths = (title) => {
+    if (title) {
+      setStrengths(prevCertificates => [...prevCertificates, title]);
+    }
+  };
+
+
   const value = {
     data,
     handleData,
@@ -116,7 +142,11 @@ const MyResumeProvider = ({ children }) => {
     addProjects,
     removeProjects,
     skills,
-    handleSkills,
+    addSkill,
+    certificates,
+    handleAddCertificates,
+    strengths,
+    handleAddStrengths,
 
   }
   return (

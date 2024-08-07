@@ -5,7 +5,7 @@ import { ResumeContext } from '../Context'
 function Data() {
     const { data, handleData, objective, setobjective  } = useContext(ResumeContext)
     return (
-        <div className='m-4 p-4 rounded-2xl bg-white shadow-md'>
+        <div className='mx-4 p-4 rounded-2xl bg-white shadow-md'>
             <h1 className=' text-purple-600 text-2xl font-bold mb-6'>Personal Information</h1>
             <div className='flex flex-wrap -mx-2'>
                 <div className='w-full md:w-1/2 px-2 mb-4'>

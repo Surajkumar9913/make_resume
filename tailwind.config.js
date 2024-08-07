@@ -12,6 +12,11 @@ export default {
       },
       colors: {
         customColor: '#EDF2F7',
+        Navcolor: '#F7FAFC'
+      },
+      fontFamily: {
+        pacifico: ['Pacifico', 'cursive'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },

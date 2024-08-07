@@ -2,12 +2,11 @@ import React, { useContext } from 'react'
 import { ResumeContext } from '../Context'
 
 const Resume = () => {
-  const { data, objective, education, projects } = useContext(ResumeContext)
-  const printResume = () => {
-    window.print();
-  };
+  const { data, objective, education, projects, skills, certificates, strengths } = useContext(ResumeContext)
+
+
   return (
-    <div className='shadow-custom  m-4 bg-white'>
+    <div className='   bg-white'>
       <div className=' p-2  text-center'>
         <h1 className='text-4xl' >{data.full_name}</h1>
         <span>{data.number} </span>
@@ -39,53 +38,56 @@ const Resume = () => {
         <h1 className='text-2xl font-bold bg-orange-300 '>Projects</h1>
         {
           projects.map((project) => (
-            <div className=' p-2' key={project.id}>
-              <p className='font-bold' >{project.title} </p>
+            <div className=' p-2' >
+              <p className='font-bold' key={project.id}>{project.title} </p>
               <li>{project.description}</li>
             </div>
           ))
         }
 
-
         <div className='mt-2' >
           <h1 className='text-2xl font-bold bg-orange-300 '>Skills</h1>
-          <div className=' p-2 '>
-            <p><span className='font-bold'>Web Technologies : </span>HTML</p>
-            <p><span className='font-bold'>Programming Languages : </span>HTML</p>
-            <p><span className='font-bold'>Databases : </span>HTML</p>
-            <p><span className='font-bold'>Tools  : </span>HTML</p>
+          <div className='p-2'>
+            {skills.map(skill => (
+              <p key={skill.id}>
+                <span className='font-bold'>
+                  {skill.id === 1 && "Web Technologies : "}
+                  {skill.id === 2 && "Programming Languages : "}
+                  {skill.id === 3 && "Databases : "}
+                  {skill.id === 4 && "Tools : "}
+                </span>
+                {skill.id === 1 && skill.webTechnologies.join(', ')}
+                {skill.id === 2 && skill.programmingLanguages.join(', ')}
+                {skill.id === 3 && skill.databases.join(', ')}
+                {skill.id === 4 && skill.tools.join(', ')}
+              </p>
+            ))}
           </div>
         </div>
 
         <div className='mt-2' >
           <h1 className='text-2xl font-bold bg-orange-300 '>Certificates</h1>
-          <div className=' p-2  '>
-            <li>Certificate 1</li>
-            <li>Certificate 1</li>
-            <li>Certificate 1</li>
-            <li>Certificate 1</li>
+          <div className=' p-2'>
+            {
+              certificates.map((cert, index) => (
+                <li key={index}>{cert}</li>
+              ))
+            }
           </div>
         </div>
 
         <div className='mt-2' >
           <h1 className='text-2xl font-bold bg-orange-300 '>Strength</h1>
           <div className=' p-2'>
-            <li>Strength 1</li>
-            <li>Strength 1</li>
-            <li>Strength 1</li>
-            <li>Strength 1</li>
+            {
+              strengths.map((strenth, index) => (
+                <li key={index} >{strenth}</li>
+              ))
+            }
           </div>
         </div>
 
       </div>
-
-      <button
-          type="button"
-          onClick={printResume}
-          className='bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700'
-        >
-          Print Resume
-        </button>
 
     </div>
   )
