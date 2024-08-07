@@ -50,29 +50,3 @@ The Resume Builder App is a web application built with React that allows users t
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-   ## Project structure
-   MakeResume/
-├── public/
-│   ├── logo.png
-│   └── resume.png
-├── src/
-│   ├── components/
-│   │   ├── Cerificates.jsx
-│   │   ├── Data.jsx
-│   │   ├── Education.jsx
-│   │   ├── Home.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── Resume.jsx
-│   │   ├── ResumeInput.jsx
-│   │   └── Footer.jsx
-│   |
-│   ├── App.css
-│   ├── App.jsx
-│   ├── Context.jsx
-|   ├── index.css 
-│   └── main.jsx
-├── index.html
-├── tailwind.config.js
-├── package.json
-└── README.md
