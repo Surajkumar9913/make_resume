@@ -1,5 +1,8 @@
 # Resume Builder App
 
+## Live Demo
+
+Check out the live demo [here](https://makeresumebysuraj.netlify.app/).
 
 
 ## Overview
