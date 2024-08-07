@@ -5,8 +5,8 @@ const Home = () => {
     return (
         <div className=' justify-center items-center md:flex'>
             <div className='md:w-2/5 p-4'>
-                <p className='text-purple-700 font-semibold text-3xl md:text-4xl md:text-justify'>Craft Your Dream Resume with MakeResume</p>
-                <p className='text-justify text-gray-600 text-xl mt-4'> MakeResume empowers you to create, customize, and print
+                <p className='text-purple-700 font-semibold text-2xl md:text-4xl md:text-justify'>Craft Your Dream Resume with MakeResume</p>
+                <p className='text-justify text-gray-600 md:text-xl mt-4'> MakeResume empowers you to create, customize, and print
                     professional resumes effortlessly. With our user-friendly
                     templates, you can craft a standout resume in minutes. Build,
                     print, and download your resume for free, and take the next step
