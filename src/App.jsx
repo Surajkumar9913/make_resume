@@ -1,48 +1,55 @@
-import React, { useRef } from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import Resume from './components/Resume';
-import ResumeInput from './components/ResumeInput';
-import MyResumeProvider from './Context';
-import { useReactToPrint } from 'react-to-print';
-import Home from './components/Home';
-import Footer from './components/Footer';
+import React, { useRef } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Resume from "./components/Resume";
+import ResumeInput from "./components/ResumeInput";
+import MyResumeProvider from "./Context";
+import { useReactToPrint } from "react-to-print";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 
 function App() {
-  const resumeRef = useRef();
+    const resumeRef = useRef();
 
-  const handlePrint = useReactToPrint({
-    content: () => resumeRef.current,
-  });
+    const handlePrint = useReactToPrint({
+        content: () => resumeRef.current,
+    });
 
-  return (
-    <MyResumeProvider>
-      <Navbar />
-      <Home />
-      <div className='text-center w-full bg-customColor pt-4'>
-        <h1 className='text-3xl text-gray-800'>Resume Builder Dashboard</h1>
-      </div>
-      <div className="w-full px-10   bg-customColor text-center md:flex md:justify-end ">
-        <button
-          className="bg-purple-600 my-4 text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-700"
-          onClick={handlePrint}
-        >
-          Download Resume
-        </button>
-      </div>
-      <div className="md:flex bg-customColor p-4">
-        <div className="md:w-1/2">
-          <ResumeInput />
-        </div>
-        <div className="md:w-1/2">
-          <div ref={resumeRef}>
-            <Resume />
-          </div>
-        </div>
-      </div>
-      <Footer/>
-    </MyResumeProvider>
-  );
+    return (
+        <MyResumeProvider>
+            <div className="scroll-smooth">
+                <Navbar />
+                <Home />
+                <div className="text-center w-full bg-customColor pt-4">
+                    <h1 className="text-3xl text-gray-800">
+                        Resume Builder Dashboard
+                    </h1>
+                </div>
+                <div className="w-full px-10   bg-customColor text-center md:flex md:justify-end ">
+                    <button
+                        className="bg-purple-600 my-4 text-white px-4 py-2 rounded-md shadow-md hover:bg-purple-700"
+                        onClick={handlePrint}
+                    >
+                        Download Resume
+                    </button>
+                </div>
+                <div
+                    id="resumemaker"
+                    className="flex flex-col-reverse  md:flex-row bg-customColor p-4 "
+                >
+                    <div className="md:w-1/2">
+                        <ResumeInput />
+                    </div>
+                    <div className="mb-4 md:w-1/2 ">
+                        <div ref={resumeRef}>
+                            <Resume />
+                        </div>
+                    </div>
+                </div>
+                <Footer />
+            </div>
+        </MyResumeProvider>
+    );
 }
 
 export default App;
